@@ -1,8 +1,0 @@
-.custom-rectangle {
-  stroke: var(--path-color, #38f);
-  fill: var(--path-color, #38f);
-
-  &--search {
-    --path-color: var(--color-marker-search);
-  }
-}

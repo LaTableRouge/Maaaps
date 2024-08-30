@@ -75,6 +75,10 @@ The plugin support the clustering for the markers, you can disable it but then t
 
 == Changelog ==
 
+= 1.1.0 =
+* Released: August 30, 2024
+* https://github.com/LaTableRouge/Mappps/releases/tag/1.1.0-beta
+
 = 1.0.0 =
 * Released: August 28, 2024
 * https://github.com/LaTableRouge/Mappps/releases/tag/1.0.0-beta
