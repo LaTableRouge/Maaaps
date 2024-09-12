@@ -3,8 +3,7 @@ import { createRef, useCallback, useEffect, useRef, useState } from '@wordpress/
 import { sortStickyPosts } from './common/functions'
 import Filters from './components/Filters'
 import Loader from './components/Loader'
-import MapEdit from './components/MapEdit'
-import MapFront from './components/MapFront'
+import Map from './components/Map'
 import Popups from './components/Popups'
 import Sidebar from './components/Sidebar'
 import Toggles from './components/Toggles'
@@ -130,61 +129,29 @@ export default function Main({ attributes, inEditor = false, isSelected, queried
 
         {!!posts.length && (
           <>
-            {
-              // Tis is a temporary fix. wp-scripts break things from leaflet marker cluster in gutenberg.
-              // ticket: https://github.com/WordPress/gutenberg/issues/64446
-              inEditor
-                ? (
-                <MapEdit
-                  boundsPadding={attributes.selectedBoundsPadding}
-                  cluster={attributes.isClustered}
-                  clusterSize={attributes.selectedMarkerClusterSize}
-                  displaySearch={attributes.displaySearch}
-                  isGeolocated={attributes.isGeolocated}
-                  isMobileView={isMobileView}
-                  limitedSearch={attributes.limitedSearch}
-                  markerOffset={popupOffset}
-                  markerRefs={markerRefs}
-                  markerSize={attributes.selectedMarkerSize}
-                  maxMarkerZoom={attributes.selectedMaxMarkerZoom}
-                  maxZoom={attributes.selectedMaxZoom}
-                  mobileIsMapDisplayed={mobileIsMapDisplayed}
-                  postRefs={postRefs}
-                  posts={posts}
-                  selectedPost={selectedPost}
-                  selectedSearchResult={selectedSearchResult}
-                  setFiltersOpen={setFiltersOpen}
-                  setSelectedPost={setSelectedPost}
-                  setSelectedSearchResult={setSelectedSearchResult}
-                  tiles={attributes.selectedMapTiles}
-                />
-                  )
-                : (
-                <MapFront
-                  boundsPadding={attributes.selectedBoundsPadding}
-                  cluster={attributes.isClustered}
-                  clusterSize={attributes.selectedMarkerClusterSize}
-                  displaySearch={attributes.displaySearch}
-                  isGeolocated={attributes.isGeolocated}
-                  isMobileView={isMobileView}
-                  limitedSearch={attributes.limitedSearch}
-                  markerOffset={popupOffset}
-                  markerRefs={markerRefs}
-                  markerSize={attributes.selectedMarkerSize}
-                  maxMarkerZoom={attributes.selectedMaxMarkerZoom}
-                  maxZoom={attributes.selectedMaxZoom}
-                  mobileIsMapDisplayed={mobileIsMapDisplayed}
-                  postRefs={postRefs}
-                  posts={posts}
-                  selectedPost={selectedPost}
-                  selectedSearchResult={selectedSearchResult}
-                  setFiltersOpen={setFiltersOpen}
-                  setSelectedPost={setSelectedPost}
-                  setSelectedSearchResult={setSelectedSearchResult}
-                  tiles={attributes.selectedMapTiles}
-                />
-                  )
-            }
+            <Map
+              boundsPadding={attributes.selectedBoundsPadding}
+              cluster={attributes.isClustered}
+              clusterSize={attributes.selectedMarkerClusterSize}
+              displaySearch={attributes.displaySearch}
+              isGeolocated={attributes.isGeolocated}
+              isMobileView={isMobileView}
+              limitedSearch={attributes.limitedSearch}
+              markerOffset={popupOffset}
+              markerRefs={markerRefs}
+              markerSize={attributes.selectedMarkerSize}
+              maxMarkerZoom={attributes.selectedMaxMarkerZoom}
+              maxZoom={attributes.selectedMaxZoom}
+              mobileIsMapDisplayed={mobileIsMapDisplayed}
+              postRefs={postRefs}
+              posts={posts}
+              selectedPost={selectedPost}
+              selectedSearchResult={selectedSearchResult}
+              setFiltersOpen={setFiltersOpen}
+              setSelectedPost={setSelectedPost}
+              setSelectedSearchResult={setSelectedSearchResult}
+              tiles={attributes.selectedMapTiles}
+            />
 
             {attributes.selectedDisplayType === 'full' && attributes.displayFilters && (
               <Filters filtersOpen={filtersOpen} setFilters={setFilters} setFiltersOpen={setFiltersOpen} tempFilters={tempFilters} />
