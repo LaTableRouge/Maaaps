@@ -1,9 +1,9 @@
 === Mappps ===
 Contributors: latablerouge, bobbymcbobbyface
 Requires at least: 6.2
-Tested up to: 7.0
+Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.7.7
+Stable tag: 1.7.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Repository: https://github.com/LaTableRouge/Mappps
@@ -116,6 +116,10 @@ Depending on which library is called first, the other takes priority and the fir
 * This version fix RTL styles, please upgrade immediately.
 
 == Changelog ==
+
+= 1.7.8 =
+* Released: August 13, 2026
+* Wordpress 7.1 compatibility check.
 
 = 1.7.7 =
 * Released: April 29, 2026
